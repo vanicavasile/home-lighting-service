@@ -1,0 +1,90 @@
+.footer {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    height: 180px;
+    font-size: 0.8em;
+    color: rgb(255, 251, 251);
+
+    background: rgb(255,249,153);
+    background: linear-gradient(360deg, rgba(255,249,153,1) 0%, rgba(145,190,244,1) 100%);
+
+    background: rgb(255,252,206);
+background: linear-gradient(360deg, rgba(255,252,206,1) 0%, rgba(145,190,244,1) 100%);
+
+background: rgb(0,0,0);
+background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(145,190,244,1) 100%);
+
+    a {
+      color: white;
+    }
+  }
+
+  &__main {
+    &--contents {
+      display: flex;
+      margin: 20px 100px;
+      justify-content: space-between;
+
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style: none;
+        font-size: 0.75em;
+      }
+    }
+
+    &--connect--us {
+      li {
+        &:nth-child(-n + 2) {
+          margin: 3px 0;
+        }
+
+        &:last-child {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &--social--medias {
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      > ul {
+        display: flex;
+        justify-content: center;
+      }
+
+      li:nth-child(2) {
+        margin: 0 15px;
+      }
+    }
+
+    &--contact--us {
+      li {
+        &:nth-child(-n + 2) {
+          margin: 3px 0;
+        }
+
+        &:last-child {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  &__rights--policy {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid gray;
+    padding: 20px 100px;
+
+    > p {
+      font-size: 0.62em;
+    }
+  }
+}
