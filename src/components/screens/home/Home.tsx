@@ -1,19 +1,24 @@
 import { FC } from "react";
 import Image from "next/image";
-import Head from "next/head";
 import Layout from "@/components/layout/Layout";
+import { useTranslation } from 'next-i18next'
 
 const Home: FC = () => {
+  const { t } = useTranslation('common')
+  
+
   return (
     <Layout 
       title="Home"
       description="We do homelighting services from the begginning to the end."
     >
       <h1>
-        Home Page - First Page
+        {t('submitBtn')}
       </h1>
     </Layout>
   );
 };
 
 export default Home;
+
+
