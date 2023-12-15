@@ -2,24 +2,28 @@ import { FC } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "react-i18next";
 
 const Footer: FC = () => {
+  const { t } = useTranslation('footer')
+
   return (
     <footer className="footer__container">
       <div className="footer__main--contents">
         <div className="footer__main--connect--us">
-          <h3>HomeLighting Services</h3>
+          <h3>{t('companyName')}</h3>
           <ul>
-            <li>Moldova Republic of, Chișinău</li>
-            <li>Phone Number</li>
+            <li>{t('locationCity')}</li>
+            <li>{t('phoneNumber')}</li>
             <li>
               <link rel="stylesheet" href="" />
-              GET DIRECTIONS Arrow
+              {t('getDirection')} Arrow
             </li>
           </ul>
         </div>
         <div className="footer__main--social--medias">
-          <h3>Join Our Social Medias</h3>
+          <h3>{t('socialMedias')}</h3>
           <ul className="footer__main--contact--us--ul">
             <li>
               <link rel="stylesheet" href="" />
@@ -36,13 +40,13 @@ const Footer: FC = () => {
           </ul>
         </div>
         <div className="footer__main--contact--us">
-          <h3>Let's discuss what's next</h3>
+          <h3>{t('whatsNext')}</h3>
           <ul>
-            <li>Have a project or a question?</li>
-            <li>We'd love to hear from you.</li>
+            <li>{t('projectOrQuestion')}</li>
+            <li>{t('hearFromYou')}</li>
             <li className="footer__main--contents--directions__contact--li">
               <Link href="/">
-                CONTACT US 
+                {t('contactUs')} 
                 <FontAwesomeIcon 
                   icon={faCircleArrowRight}
                   
@@ -61,3 +65,17 @@ const Footer: FC = () => {
 };
 
 export default Footer;
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  console.log(locale)
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        'common',
+        'header',
+        'footer'
+      ])),
+    },
+  }
+}

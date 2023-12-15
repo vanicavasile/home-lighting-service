@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Layout from "@/components/layout/Layout";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const ContactsPage: NextPage = () => {
   return (
@@ -16,3 +17,17 @@ const ContactsPage: NextPage = () => {
 };
 
 export default ContactsPage;
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  console.log(locale)
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        'common',
+        'header',
+        'footer'
+      ])),
+    },
+  }
+}

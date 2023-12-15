@@ -1,17 +1,29 @@
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useCallback } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import HomeLIghtingImg from "public/assets/home_lighting.png"
+import HomeLIghtingImg from "public/assets/home_lighting.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
-import RoFlagIcon from "public/assets/romanian_language.png"
+import RoFlagIcon from "public/assets/romanian_language.png";
+import { useTranslation } from "next-i18next";
 
 const Header: FC = () => {
-  const { pathname } = useRouter();
+  const router = useRouter();
+  const { t } = useTranslation("header");
+
+  const switchToLocale = useCallback(
+    (locale: string) => {
+      const path = router.asPath;
+      console.log("locale");
+      console.log(locale);
+      return router.push(path, path, { locale });
+    },
+    [router]
+  );
 
   return (
     <header className="header__container">
@@ -30,10 +42,10 @@ const Header: FC = () => {
       </div>
       <nav className="nav__container">
         <div className="nav__menu">
-          <Link href="/about_us">About</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/sales">Sales</Link>
-          <Link href="/contacts">Contacts</Link>
+          <Link href="/about_us">{t("aboutPage")}</Link>
+          <Link href="/services">{t("servicesPage")}</Link>
+          <Link href="/sales">{t("salesPage")}</Link>
+          <Link href="/contacts">{t("contactsPage")}</Link>
         </div>
         <div className="nav__icons">
           <ul>
@@ -44,18 +56,41 @@ const Header: FC = () => {
             </li>
             <li>
               <label htmlFor="" className="nav__label--language--switching">
-                <Image 
-                  src={RoFlagIcon} 
-                  alt="Ro Flag Icon" 
+                {/* <Image
+                  src={RoFlagIcon}
+                  alt="Ro Flag Icon"
                   style={{
                     width: "20px",
-                    height: "auto"
+                    height: "auto",
                   }}
-                  />
-                <span className="nav__label--language--switching--text">Ro</span>
-                <span className="nav__label--language--switching--icon">
+                /> */}
+                <button
+                  onClick={() => switchToLocale("ro")}
+                  className="nav__label--language--switching--btn"
+                >
+                  <span className="nav__label--language--switching--text">
+                    Ro
+                  </span>
+                </button>
+                <button
+                  onClick={() => switchToLocale("ru")}
+                  className="nav__label--language--switching--btn"
+                >
+                  <span className="nav__label--language--switching--text">
+                    Ru
+                  </span>
+                </button>
+                <button
+                  onClick={() => switchToLocale("en")}
+                  className="nav__label--language--switching--btn"
+                >
+                  <span className="nav__label--language--switching--text">
+                    En
+                  </span>
+                </button>
+                {/* <span className="nav__label--language--switching--icon">
                   <FontAwesomeIcon icon={faChevronDown} />
-                </span>
+                </span> */}
               </label>
             </li>
           </ul>

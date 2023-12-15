@@ -1,8 +1,9 @@
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import NextNProgress from "nextjs-progressbar";
+import { appWithTranslation } from "next-i18next";
 
-export default function App({ Component, pageProps }: AppProps) {
+const  App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <NextNProgress
@@ -16,3 +17,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+export default appWithTranslation(App)

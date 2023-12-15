@@ -1,4 +1,9 @@
 {
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
+  },
   "name": "homelighting-services-2024",
   "version": "0.1.0",
   "private": true,
@@ -18,11 +23,14 @@
     "@types/react": "18.2.37",
     "@types/react-dom": "18.2.15",
     "axios": "^1.6.1",
+    "i18next": "^23.7.8",
     "next": "14.0.1",
+    "next-i18next": "^15.0.0",
     "next-intl": "^3.1.0",
     "nextjs-progressbar": "^0.0.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-i18next": "^13.5.0",
     "typescript": "5.2.2"
   },
   "devDependencies": {
