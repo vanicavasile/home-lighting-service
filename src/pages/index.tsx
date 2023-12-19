@@ -4,7 +4,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 
 const HomePage: NextPage = () => {
-  return <Home />
+  return <>
+    <Home />
+  </>
 }
 
 export default HomePage
