@@ -49,7 +49,7 @@ const Footer: FC = () => {
                 {t('contactUs')} 
                 <FontAwesomeIcon 
                   icon={faCircleArrowRight}
-                  
+                  height={"10px"}
                 /> 
               </Link>
             </li>

@@ -1,34 +1,17 @@
+$button-color: #3498db;
+$button-hover-color: #2980b9;
+$button-font-size: 16px;
+$button-padding: 10px 20px;
+
 .header {
   &__container {
     display: flex;
     padding: 0 1px;
-
-    background: rgb(255,249,153);
-    background: linear-gradient(180deg, rgba(255,249,153,1) 0%, rgba(145,190,244,1) 100%);
-
-    background: rgb(255,249,153);
-    background: linear-gradient(360deg, rgba(255,249,153,1) 0%, rgba(145,190,244,1) 100%);
-
-    background: rgb(255,250,180);
-background: linear-gradient(180deg, rgba(255,250,180,1) 0%, rgba(145,190,244,1) 100%);
-
-background: rgb(255,253,219);
-background: linear-gradient(180deg, rgba(255,253,219,1) 0%, rgba(145,190,244,1) 100%);
-
-background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(145,190,244,1) 100%);
-
-
+    background-color: #143e68;
 
     a {
       color: white;
     }
-  }
-
-  &__logo {
-    margin: 10px 0 10px 150px;
-    background-color: #9da5a5;
-    border-radius: 50px;
   }
 }
 
@@ -73,25 +56,24 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(145,190,244,1) 100%);
 
   &__label--language--switching {
     display: flex;
-    align-items: center;
-    color: white;
-    cursor: pointer;
+    gap: 10px;
 
-    &--text {
-      margin: 0 8px;
-    }
-    
     &--btn {
+      padding: 10px;
+      border: 2px solid #3498db;
+      border-radius: 5px;
+      background-color: #3498db;
+      color: #fff;
       cursor: pointer;
-      margin: 0 3px;
 
-      // &:active {
-      //   color: red;
-      //   border: 1px solid rgb(25, 25, 112);
-      // }
-    }
-    &--icon:hover {
-      color: crimson;
+      &:hover {
+        background-color: #2980b9;
+      }
+
+      &.active {
+        background-color: #143e68;
+        border-color: #2c3e50;
+      }
     }
   }
 }
