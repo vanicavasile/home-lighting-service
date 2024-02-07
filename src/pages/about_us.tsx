@@ -19,7 +19,6 @@ const AboutUsPage: NextPage = () => {
 export default AboutUsPage;
 
 export async function getStaticProps({ locale }: { locale: string }) {
-  console.log(locale)
 
   return {
     props: {

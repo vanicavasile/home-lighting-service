@@ -3,11 +3,7 @@ import type { AppProps } from "next/app";
 import NextNProgress from "nextjs-progressbar";
 import { appWithTranslation } from "next-i18next";
 import Header from "@/components/layout/Header";
-import dynamic from "next/dynamic";
-
-const DynamicFooter = dynamic(() => import("@/components/layout/Footer"), {
-  ssr: false
-})
+import Footer from "@/components/layout/Footer";
 
 const  App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -21,7 +17,7 @@ const  App = ({ Component, pageProps }: AppProps) => {
       />
       <Header />
       <Component {...pageProps} />
-      <DynamicFooter />
+      <Footer />
     </>
   );
 }

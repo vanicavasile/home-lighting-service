@@ -1,5 +1,4 @@
 import { FC } from "react";
-import Image from "next/image";
 import Layout from "@/components/layout/Layout";
 import { useTranslation } from 'next-i18next'
 
