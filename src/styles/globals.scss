@@ -5,13 +5,7 @@
 @import './layout/_header';
 @import './layout/_footer';
 @import './layout/_main-body';
-// @import "./fontawesome/scss/fontawesome.scss";
-// @import "./fontawesome/scss/solid.scss";
 
-#__next {
-  height: calc(100vh - 37px);
-
-}
 
 * {
   box-sizing: border-box;
@@ -26,11 +20,13 @@ a {
 body {
   font-size: 20px;
   background-color: rgb(235, 235, 235);
-  // background-color: #fef9e5;
-  // background-color: #fef9e552;
-  // background-color: #fff0ca;
-  // background-color: #e5edd4;
   font-family: "Oswald", sans-serif;
 }
+
+#__next {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 
 
